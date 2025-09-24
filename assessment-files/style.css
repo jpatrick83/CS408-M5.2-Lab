@@ -1,0 +1,264 @@
+/* || General setup - reset margins and basic styles */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 12px; /* base font size */
+  background-color: rgb(19, 19, 141); /* page background color */
+}
+
+body {
+  width: 80%;
+  min-width: 1024px; /* ensure minimum layout width */
+  margin: 0 auto; /* center the page */
+}
+
+/* || Typography - fonts and colors for headings and text */
+h1, h2, h3 {
+  font-family: 'Sonsie One', cursive; /* heading font */
+  color: #0c0c0c;
+}
+
+p, input, li, table, label {
+  font-family: 'Open Sans Condensed', sans-serif; /* body font */
+  color: #000000;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+p, li, table {
+  font-size: 1.6rem;
+  line-height: 1.5; /* readability */
+}
+
+/* || Header, article, and secondary layout */
+article, footer, .secondary {
+  background-color: #4075b2; 
+  padding: 10px 30px; /* consistent padding */
+}
+
+article {
+  margin-right: 10px; /* spacing for flex layout */
+}
+
+/* || Navigation bar styles */
+nav {
+  height: 50px;
+  background-color: #fdfeff;
+  display: flex;
+  padding: 1% 0;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex; /* horizontal menu */
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #004d40;
+}
+
+/* Search form in navigation */
+nav .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+.search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.search input[type="search"] {
+  flex: 3;
+}
+
+.search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #000000;
+  border: 0;
+  color: white;
+}
+
+/* || Main layout */
+main {
+  display: flex; /* two-column layout */
+}
+
+article {
+  flex: 5; /* main content wider */
+}
+
+.secondary {
+  flex: 2; /* sidebar narrower */
+}
+
+footer {
+  margin-top: 10px;
+}
+
+/* || Table styling */
+table {
+  width: 100%;
+  background-color: #d9d9f9;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #def; /* alternate row color */
+}
+
+/* || Media (images and audio) */
+img, audio {
+  display: block;
+  margin: 0 auto; /* center content */
+}
+
+audio {
+  width: 500px;
+}
+
+/* || Comments section styling */
+.comments {
+  background-color: #2735d8;
+  padding: 10px;
+  color: #f0f0f0;
+}
+
+.show-hide {
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+  background-color: #000323;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+/* Flex layout for label + input pairs */
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+  align-items: center; /* vertically center label and input */
+}
+
+.comment-form label {
+  flex: 2;
+  text-align: right;
+  font-weight: bold;
+}
+
+.comment-form input {
+  margin-left: 1rem;
+  flex: 6;
+}
+
+/* Input and button font styles */
+.comment-form input, .comment-form label, .show-hide {
+  font-size: 1.6rem;
+  line-height: 32px;
+  color: #f0f0f0;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+/* Comments list styling */
+.comment-container {
+  margin-top: 0;
+}
+
+.comment-container li {
+  list-style-type: none;
+  display: flex;
+  color: #ffffff;
+}
+
+.comment-container li p:nth-child(1) {
+  flex: 1;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+.comment-container li p:nth-child(2) {
+  flex: 5;
+  color: #f0f0f0;
+}
+
+/* || Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;  /* hide off-screen by default */
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  background-color: #ff0;
+  color: #000;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  z-index: 1000;
+}
